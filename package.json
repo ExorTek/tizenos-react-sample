@@ -8,17 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --write .",
-    "build:tizen": "yarn build && yarn prepare:tizen",
-    "prepare:tizen": "yarn copy:config && yarn copy:assets",
-    "copy:config": "copyfiles -f config.xml dist",
-    "copy:assets": "copyfiles -f icon.png dist",
-    "package": "yarn build:tizen && yarn wgt:create",
-    "wgt:create": "tizen build-web -out dist -- . && tizen package --type wgt --sign tizenos-key -- dist",
-    "deploy": "yarn package && yarn install && yarn run",
-    "install": "sdb install tizenos-react-sample.wgt",
-    "run": "sdb shell app_launcher -s com.example.tizenossample",
-    "clean": "rm -rf dist tizenos-react-sample.wgt"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -37,10 +27,10 @@
     "globals": "^16.5.0",
     "prettier": "^3.7.4",
     "terser": "^5.44.1",
-    "vite": "yarn:rolldown-vite@7.2.5"
+    "vite": "npm:rolldown-vite@latest"
   },
   "resolutions": {
-    "vite": "yarn:rolldown-vite@7.2.5"
+    "vite": "npm:rolldown-vite@latest"
   },
   "packageManager": "yarn@4.12.0"
 }

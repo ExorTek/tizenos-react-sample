@@ -11,18 +11,29 @@ export default defineConfig({
   ],
   base: './',
   build: {
+    outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
-    target: 'chrome120',
+    target: ['es2015', 'chrome56'],
     rolldownOptions: {
       output: {
         assetFileNames: 'assets/[name].[ext]',
         chunkFileNames: 'assets/[name].js',
         entryFileNames: 'assets/[name].js',
+        manualChunks: undefined,
       },
     },
+    cssCodeSplit: false,
+    assetsInlineLimit: 0,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
   },
   resolve: {
     alias: {},
+  },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
   },
 });

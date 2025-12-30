@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && copyfiles -f ./icon.png ./dist/assets && copyfiles -f ./config.xml ./dist",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "package": "yarn build && tizen package -t wgt -s SamsungTV -o ./dist"
   },
   "dependencies": {
     "react": "^19.2.0",

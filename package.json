@@ -6,32 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node scripts/prepare-tizen.js",
-    "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "tizen:build-web": "yarn postbuild && tizen build-web -e \".*\" -e \"node_modules/*\" -e \"src/*\" -e \"*.md\" -e \"package*.json\" -e \"yarn.lock\" -e \".git*\" -e \".prettier*\" -e \"eslint*\" -e \"vite.config.js\" -e \"scripts/*\" -- ./dist",
-    "tizen:package": "tizen package -t wgt -s TizenEmu -- ./dist/.buildResult",
-    "tizen:full": "yarn build && yarn tizen:build-web && yarn tizen:package",
-    "tizen:install": "tizen install -n dist/.buildResult/*.wgt",
-    "tizen:run": "tizen run -p kmOMMbLJRm.ReactSample",
-    "tizen:connect": "sdb devices",
-    "clean": "rm -rf dist .buildResult *.wgt"
+    "tizen:full": "yarn build && node scripts/tizen-build.js TizenEmu",
+    "install:dev": "node scripts/tizen-install.js",
+    "install:remote": "node scripts/tizen-install.js 127.0.0.1:26101"
   },
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "babel-plugin-react-compiler": "^1.0.0",
-    "copyfiles": "^2.4.1",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "prettier": "^3.7.4",
     "terser": "^5.44.1",

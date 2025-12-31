@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/tizen-react-sample" version="1.0.0" viewmodes="fullscreen">
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://memet.dev" version="1.0.0" viewmodes="fullscreen">
     <tizen:application id="kmOMMbLJRm.ReactSample" package="kmOMMbLJRm" required_version="2.3"/>
     <author href="https://memet.dev/" email="exortek979@gmail.com">ExorTek</author>
     <content src="index.html"/>

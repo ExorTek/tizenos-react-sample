@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "tizen:build-web": "yarn postbuild && tizen build-web -e \".*\" -e \"node_modules/*\" -e \"src/*\" -e \"*.md\" -e \"package*.json\" -e \"yarn.lock\" -e \".git*\" -e \".prettier*\" -e \"eslint*\" -e \"vite.config.js\" -e \"scripts/*\" -- ./dist",
-    "tizen:package": "tizen package -t wgt -s SamsungRem -- ./dist/.buildResult",
+    "tizen:package": "tizen package -t wgt -s TizenEmu -- ./dist/.buildResult",
     "tizen:full": "yarn build && yarn tizen:build-web && yarn tizen:package",
     "tizen:install": "tizen install -n dist/.buildResult/*.wgt",
     "tizen:run": "tizen run -p kmOMMbLJRm.ReactSample",
